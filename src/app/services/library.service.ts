@@ -7,7 +7,7 @@ import { ApiResponse, Book, Loan } from '../interfaces/library.interfaces';
   providedIn: 'root'
 })
 export class LibraryService {
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://backend-biblioteca-nwuv.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 
