@@ -1,0 +1,498 @@
+.student-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+}
+
+/* Header */
+.student-header {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 32px rgba(17, 153, 142, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.student-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(15deg);
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-left p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.95;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.logout-btn {
+  padding: 0.8rem 1.8rem;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabs Navigation */
+.tabs {
+  display: flex;
+  background-color: white;
+  border-bottom: none;
+  padding: 0;
+  gap: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1.2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  border-bottom: 4px solid transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  position: relative;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #11998e, #38ef7d);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.tab-btn:hover {
+  background: linear-gradient(180deg, #f0fffe 0%, #fff 100%);
+  color: #11998e;
+}
+
+.tab-btn:hover::before {
+  width: 80%;
+}
+
+.tab-btn.active {
+  color: #11998e;
+  background: linear-gradient(180deg, #f0fffe 0%, #fff 100%);
+}
+
+.tab-btn.active::before {
+  width: 100%;
+}
+
+/* Content */
+.content {
+  padding: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tab-content {
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dashboard Card */
+.dashboard-card {
+  background: linear-gradient(135deg, #fff 0%, #f8fff9 100%);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(17, 153, 142, 0.1);
+}
+
+.dashboard-card h2 {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 5px solid #11998e;
+  box-shadow: 0 4px 12px rgba(17, 153, 142, 0.15);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(17, 153, 142, 0.25);
+}
+
+.info-item .label {
+  display: block;
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.info-item .value {
+  display: block;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.book-card {
+  background: linear-gradient(135deg, #fff 0%, #f8fff9 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(17, 153, 142, 0.15);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+}
+
+.book-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(17, 153, 142, 0.3);
+  border-color: rgba(17, 153, 142, 0.2);
+}
+
+.book-cover {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.book-card h3 {
+  margin: 0.5rem 0;
+  color: #333;
+  font-size: 1.2rem;
+  min-height: 2.4rem;
+  font-weight: 700;
+}
+
+.book-card .author {
+  color: #11998e;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.book-card .isbn {
+  color: #999;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.book-card .year {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.book-card .category {
+  display: inline-block;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  color: #2e7d32;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin: 0.8rem 0;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+}
+
+.book-card .description {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.8rem 0;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.available {
+  color: #4caf50;
+  font-weight: bold;
+  margin: 0.8rem 0;
+  font-size: 1rem;
+}
+
+.available.unavailable {
+  color: #f44336;
+}
+
+.btn-borrow {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(17, 153, 142, 0.4);
+}
+
+.btn-borrow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(17, 153, 142, 0.5);
+}
+
+.btn-unavailable {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #ccc 0%, #aaa 100%);
+  color: #666;
+  border: none;
+  border-radius: 50px;
+  cursor: not-allowed;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Loans Table */
+.loans-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+.loans-table thead {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+}
+
+.loans-table th {
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.loans-table th:first-child {
+  border-top-left-radius: 20px;
+}
+
+.loans-table th:last-child {
+  border-top-right-radius: 20px;
+}
+
+.loans-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #f0fffe;
+}
+
+.loans-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.loans-table tbody tr:hover {
+  background: linear-gradient(90deg, #f0fffe 0%, #fff 100%);
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(17, 153, 142, 0.1);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.badge-activo {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  box-shadow: 0 2px 8px rgba(21, 87, 36, 0.2);
+}
+
+.badge-devuelto {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+  box-shadow: 0 2px 8px rgba(12, 84, 96, 0.2);
+}
+
+.badge-vencido {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  box-shadow: 0 2px 8px rgba(114, 28, 36, 0.2);
+}
+
+/* Loading & Empty States */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #11998e;
+  font-size: 1.2rem;
+  font-weight: 600;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #fff 0%, #f8fff9 100%);
+  border-radius: 20px;
+  color: #999;
+  font-size: 1.1rem;
+  border: 2px dashed rgba(17, 153, 142, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .student-header {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    border-bottom: none;
+    border-left: 4px solid transparent;
+    text-align: left;
+  }
+
+  .tab-btn::before {
+    left: 0;
+    transform: translateX(0);
+    height: 100%;
+    width: 4px;
+  }
+
+  .tab-btn.active::before,
+  .tab-btn:hover::before {
+    height: 100%;
+    width: 4px;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .loans-table {
+    font-size: 0.85rem;
+  }
+
+  .loans-table th,
+  .loans-table td {
+    padding: 0.8rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .dashboard-card,
+  .book-card {
+    padding: 1.5rem;
+  }
+
+  .info-item {
+    padding: 1.5rem;
+  }
+}
